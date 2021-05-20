@@ -18,7 +18,7 @@ export class PicsumService {
     for (let i = 0; i < 4000; i++) {
       let pickDemo:Picsum = {
         id:i,
-        photo: 'https://picsum.photos/'+ i +'/300',
+        photo: 'https://picsum.photos/id/'+ i +'/500/500',
         text:  Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
 
       }
