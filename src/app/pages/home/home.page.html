@@ -14,18 +14,16 @@
       <ion-col size="12">
         <ion-virtual-scroll [items]="data | async | FilterPipe:textoBuscarFiltro:columnaBuscarFiltro">
 
+          <ion-card *virtualItem="let item">
+            <ion-card-header>
+              <ion-card-subtitle>id: {{item.id}}</ion-card-subtitle>
+              <ion-card-title> Text: {{item.text}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content style="display: flex; justify-content: center;height: 300px;">
 
-          <ion-item *virtualItem="let item">
-            <ion-avatar slot="start">
-              <!-- <img [src]="item.photo" /> NO ENCUENTRA LAS IMAGENES, USO EN SU LUGAR UN ICONO-->
-              <ion-icon style="font-size: 2.5rem;" name="person-circle-outline"></ion-icon>
-            </ion-avatar>
-
-            <ion-label text-wrap>
-              <p><b>id:</b>{{ item.id }} </p>
-              <p><b>random text:</b> {{ item.text }}</p>
-            </ion-label>
-          </ion-item>
+              <img style="object-fit: none;" [src]="item.photo" />
+            </ion-card-content>
+          </ion-card>
         </ion-virtual-scroll>
       </ion-col>
     </ion-row>
